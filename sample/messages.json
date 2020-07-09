@@ -1,0 +1,52 @@
+{
+  "name": "malav",
+  "email": "patelmalav@protonmail.com",
+  "password": "password",
+  "createdAt": "2020-07-09T07:48:49.195Z",
+  "updatedAt": "2020-07-09T11:22:09.177Z",
+  "messages": [
+    {
+      "deleted": false,
+      "message": "Hello World",
+      "createdAt": "2020-07-09T11:11:20.012Z",
+      "updatedAt": "2020-07-09T11:11:20.012Z",
+      "id": "5f06fb5727d595201579cc29"
+    },
+    {
+      "deleted": false,
+      "message": "🧪 message",
+      "createdAt": "2020-07-09T11:18:35.410Z",
+      "updatedAt": "2020-07-09T11:18:35.410Z",
+      "id": "5f06fd0b524efb21bae81451"
+    },
+    {
+      "deleted": false,
+      "message": "message 🧪",
+      "createdAt": "2020-07-09T11:18:48.398Z",
+      "updatedAt": "2020-07-09T11:18:48.398Z",
+      "id": "5f06fd18524efb21bae81452"
+    },
+    {
+      "deleted": false,
+      "message": "message",
+      "createdAt": "2020-07-09T11:19:31.803Z",
+      "updatedAt": "2020-07-09T11:19:31.803Z",
+      "id": "5f06fd43c66a662309f160e1"
+    },
+    {
+      "deleted": false,
+      "message": "💻 message 🧪",
+      "createdAt": "2020-07-09T11:20:57.345Z",
+      "updatedAt": "2020-07-09T11:20:57.345Z",
+      "id": "5f06fd99851199234edd912a"
+    },
+    {
+      "deleted": false,
+      "message": "🛠 grunt is trash",
+      "createdAt": "2020-07-09T11:22:09.177Z",
+      "updatedAt": "2020-07-09T11:22:09.177Z",
+      "id": "5f06fde116196b23ba7e8588"
+    }
+  ],
+  "id": "5f06cbe1b8e0f3ef73f23e85"
+}

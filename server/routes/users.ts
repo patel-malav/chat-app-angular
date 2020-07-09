@@ -8,7 +8,9 @@ import { InternalServerError } from '../errors';
 const router = Router();
 
 router.route('/').get(async (req, resp) => {
-  const allUsers = await User.find().exec();
+  const allUsers = await User.find()
+    .select('_id name createdAt updatedAt')
+    .exec();
   return resp.json(allUsers);
 });
 

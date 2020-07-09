@@ -66,10 +66,17 @@ router
         }).exec();
         if (user) {
           // @ts-ignore
-          user.messages.push(req.body);
+          user.messages.push({ ...req.body, sender: 'user' });
+          // @ts-ignore
+          user.messages.push({
+            message: faker.lorem.sentence(),
+            sender: 'admin',
+          });
+          // @ts-ignore
+          const fakeResp = [...user.messages].pop();
           const completed = await user.save();
           if (completed) {
-            return resp.json(faker.lorem.words(5));
+            return resp.json(fakeResp.toJSON());
           } else {
             throw new Error('Saved user was empty');
           }

@@ -2,11 +2,11 @@ import mongoose from 'mongoose';
 
 const messageSchema = new mongoose.Schema(
   {
-    // reciever: {
-    //   type: String,
-    //   enum: ['admin', 'another user'],
-    //   required: true,
-    // },
+    sender: {
+      type: String,
+      enum: ['admin', 'user'],
+      required: true,
+    },
     message: {
       type: String,
       required: true,

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { MessagesService } from '../messages.service';
-import { Messages } from '../interfaces';
+import { UserMessages } from '../interfaces';
 
 @Component({
   selector: 'app-chat-log',
@@ -12,7 +12,7 @@ import { Messages } from '../interfaces';
 export class ChatLogComponent implements OnInit {
   constructor(private messages: MessagesService) {}
 
-  data: Observable<Messages>;
+  data: Observable<UserMessages>;
 
   ngOnInit(): void {
     this.data = this.messages

@@ -8,13 +8,11 @@ import { InternalServerError } from '../errors';
 const router = Router();
 
 router.route('/').get(async (req, resp) => {
-  const allUsers = await User.find()
-    .select('_id name createdAt updatedAt')
-    .exec();
+  const allUsers = await User.find().select('-messages -password').exec();
   return resp.json(allUsers);
 });
 
-router.route('/genratefakeuser').post(async (req, resp) => {
+router.route('/generatefakeuser').post(async (req, resp) => {
   const name = faker.name.firstName();
   const email = faker.internet.email(name);
   const password = faker.internet.password(12, false);
@@ -48,11 +46,11 @@ router
   )
   .post(
     param('userId').isMongoId().withMessage('Invalid Id'),
-    body('message')
+    body('messages')
       .exists()
-      .withMessage('must send a message')
+      .withMessage('must send messages')
       .bail()
-      .isString()
+      .isArray()
       .withMessage('SEND ONLY STRINGS')
       .bail(),
     async (req, resp) => {
@@ -65,8 +63,10 @@ router
           _id: req.params.userId,
         }).exec();
         if (user) {
-          // @ts-ignore
-          user.messages.push({ ...req.body, sender: 'user' });
+          req.body.messages.forEach((message: string) =>
+            // @ts-ignore
+            user.messages.push({ message, sender: 'user' })
+          );
           // @ts-ignore
           user.messages.push({
             message: faker.lorem.sentence(),
